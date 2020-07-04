@@ -17,16 +17,14 @@ public class hilo_ensamblaje implements Runnable {
 
     private boolean avanzar;
     private boolean vive;
-    private int tam;
     private JTable tabla;
     private Computadora c;
-private JProgressBar progBar_t;
+    private JProgressBar progBar_t;
 
-    public hilo_ensamblaje(JProgressBar progBar_t,int tam, JTable tabla, Computadora c) {
-          this.progBar_t = progBar_t;
+    public hilo_ensamblaje(JProgressBar progBar_t, JTable tabla, Computadora c) {
+        this.progBar_t = progBar_t;
         this.avanzar = true;
         this.vive = true;
-        this.tam = tam;
         this.tabla = tabla;
         this.c = c;
     }
@@ -35,27 +33,64 @@ private JProgressBar progBar_t;
     public void run() {
         while (vive) {
             if (avanzar) {
-                if (progBar_t.getValue() < progBar_t.getMaximum()) {
-                    progBar_t.setMaximum(tam);
-                    this.progBar_t.setValue(this.progBar_t.getValue() + 1);
-
-                } else {
+                try {
                     DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+                    progBar_t.setMaximum(c.getRam().getTiempo());
+                    for (int i = 0; i < c.getRam().getTiempo(); i++) {
+                        progBar_t.setValue(i);
+                        Thread.sleep(1000);
+                    }
+                    progBar_t.setValue(0);
                     Object[] newrow2 = {"RAM", c.getRam().getTiempo()};
-                    Object[] newrow3 = {"Disco Duro", c.getDisk().getTiempo()};
-                    Object[] newrow4 = {"Bateria", c.getBaterry().getTiempo()};
-                    Object[] newrow5 = {"Teclado", c.getTeclado().getTiempo()};
-                    Object[] newrow6 = {"Pantalla", c.getPantalla().getTiempo()};
-                    Object[] newrow7 = {"Procesador", c.getProcesador().getTiempo()};
                     model.addRow(newrow2);
+                    tabla.setModel(model);
+                    progBar_t.setMaximum(c.getDisk().getTiempo());
+                    for (int i = 0; i < c.getDisk().getTiempo(); i++) {
+                        progBar_t.setValue(i);
+                        Thread.sleep(1000);
+                    }
+                    Object[] newrow3 = {"Disco Duro", c.getDisk().getTiempo()};
                     model.addRow(newrow3);
+                    tabla.setModel(model);
+                    progBar_t.setValue(0);
+                    progBar_t.setMaximum(c.getBaterry().getTiempo());
+                    for (int i = 0; i < c.getBaterry().getTiempo(); i++) {
+                        progBar_t.setValue(i);
+                        Thread.sleep(1000);
+                    }
+                    Object[] newrow4 = {"Bateria", c.getBaterry().getTiempo()};
                     model.addRow(newrow4);
-                    model.addRow(newrow5);
+                    tabla.setModel(model);
+                    progBar_t.setValue(0);
+                    progBar_t.setMaximum(c.getTeclado().getTiempo());
+                    for (int i = 0; i < c.getTeclado().getTiempo(); i++) {
+                        progBar_t.setValue(i);
+                        Thread.sleep(1000);
+                    }
+                    Object[] newrow5 = {"Teclado", c.getTeclado().getTiempo()};
+                    tabla.setModel(model);
+                    progBar_t.setValue(0);
+                    progBar_t.setMaximum(c.getTeclado().getTiempo());
+                    for (int i = 0; i < c.getTeclado().getTiempo(); i++) {
+                        progBar_t.setValue(i);
+                        Thread.sleep(1000);
+                    }
+                    Object[] newrow6 = {"Pantalla", c.getPantalla().getTiempo()};
                     model.addRow(newrow6);
+                    tabla.setModel(model);
+                    progBar_t.setValue(0);
+                    progBar_t.setMaximum(c.getPantalla().getTiempo());
+                    for (int i = 0; i < c.getPantalla().getTiempo(); i++) {
+                        progBar_t.setValue(i);
+                        Thread.sleep(1000);
+                    }
+                    Object[] newrow7 = {"Procesador", c.getProcesador().getTiempo()};
                     model.addRow(newrow7);
-                    tabla.setModel(model);  
+                    tabla.setModel(model);
+                    avanzar = false;
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                avanzar=false;
             }
             try {
                 Thread.sleep(1000);

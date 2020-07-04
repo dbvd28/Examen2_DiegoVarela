@@ -6,7 +6,12 @@
 package examen2_dv;
 
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -1371,8 +1376,24 @@ public class Exam_2DV extends javax.swing.JFrame {
         int s = 1 + random.nextInt(100);
         Tecnicos t = (Tecnicos) cb_ensamtec.getSelectedItem();
         Computadora c = (Computadora) cb_ensamcomp.getSelectedItem();
-        System.out.println(t.getEnsambladas());;
-        if (t.getEnsambladas() <= 5 && t.getEnsambladas() >= 1) {
+        if (t.getEnsambladas() == 0) {
+            try {
+                hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
+                Thread proceso1 = new Thread(he);
+                proceso1.start();
+
+                for (Tecnicos tec : at.getTecnicos()) {
+                    if (tec.getNombre().equals(t.getNombre())) {
+                        tec.setEnsambladas(tec.getEnsambladas() + 1);
+                    }
+                }
+                at.escribirArchivo();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else if (t.getEnsambladas()
+                <= 5 && t.getEnsambladas() >= 1) {
             if (r <= 70) {
                 try {
                     int tiempo = 0;
@@ -1382,7 +1403,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                     tiempo += c.getTeclado().getTiempo();
                     tiempo += c.getPantalla().getTiempo();
                     tiempo += c.getProcesador().getTiempo();
-                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
 
@@ -1395,8 +1416,40 @@ public class Exam_2DV extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            } else {
+                hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
+                Thread proceso1 = new Thread(he);
+                proceso1.start();
+                JOptionPane.showMessageDialog(null, "Fallo el ensamblaje ");
+                File archivo = null;
+                FileWriter fw = null;
+                BufferedWriter bw = null;
+                try {
+                    archivo = new File("./Bitacora.txt");
+                    fw = new FileWriter(archivo, true);
+                    bw = new BufferedWriter(fw);
+                    Date hora = new Date();
+                    String h;
+                    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+                    h = sdf.format(hora);
+                    String linea = h + " " + t.getNombre() + " Fallo en ensamblar la computadora" + c.getNoserie();
+                    bw.write(linea);
+                    bw.newLine();
+                    bw.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } // Fin Try Catch
+                try {
+                    bw.close();
+                    fw.close();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(Exam_2DV.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
-        } else if (t.getEnsambladas() <= 15 && t.getEnsambladas() >= 6) {
+        } else if (t.getEnsambladas()
+                <= 15 && t.getEnsambladas() >= 6) {
             if (p <= 78) {
                 try {
                     int tiempo = 0;
@@ -1406,7 +1459,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                     tiempo += c.getTeclado().getTiempo();
                     tiempo += c.getPantalla().getTiempo();
                     tiempo += c.getProcesador().getTiempo();
-                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
 
@@ -1420,8 +1473,40 @@ public class Exam_2DV extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
 
+            } else {
+                hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
+                Thread proceso1 = new Thread(he);
+                proceso1.start();
+                JOptionPane.showMessageDialog(null, "Fallo el ensamblaje ");
+                File archivo = null;
+                FileWriter fw = null;
+                BufferedWriter bw = null;
+                try {
+                    archivo = new File("./Bitacora.txt");
+                    fw = new FileWriter(archivo, true);
+                    bw = new BufferedWriter(fw);
+                    Date hora = new Date();
+                    String h;
+                    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+                    h = sdf.format(hora);
+                    String linea = h + " " + t.getNombre() + " Fallo en ensamblar la computadora" + c.getNoserie();
+                    bw.write(linea);
+                    bw.newLine();
+                    bw.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } // Fin Try Catch
+                try {
+                    bw.close();
+                    fw.close();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(Exam_2DV.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
-        } else if (t.getEnsambladas() <= 30 && t.getEnsambladas() >= 16) {
+        } else if (t.getEnsambladas()
+                <= 30 && t.getEnsambladas() >= 16) {
             if (q <= 87) {
                 try {
                     int tiempo = 0;
@@ -1431,7 +1516,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                     tiempo += c.getTeclado().getTiempo();
                     tiempo += c.getPantalla().getTiempo();
                     tiempo += c.getProcesador().getTiempo();
-                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
 
@@ -1445,8 +1530,40 @@ public class Exam_2DV extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
 
+            } else {
+                hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
+                Thread proceso1 = new Thread(he);
+                proceso1.start();
+                JOptionPane.showMessageDialog(null, "Fallo el ensamblaje ");
+                File archivo = null;
+                FileWriter fw = null;
+                BufferedWriter bw = null;
+                try {
+                    archivo = new File("./Bitacora.txt");
+                    fw = new FileWriter(archivo, true);
+                    bw = new BufferedWriter(fw);
+                    Date hora = new Date();
+                    String h;
+                    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+                    h = sdf.format(hora);
+                    String linea = h + " " + t.getNombre() + " Fallo en ensamblar la computadora " + c.getNoserie();
+                    bw.write(linea);
+                    bw.newLine();
+                    bw.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } // Fin Try Catch
+                try {
+                    bw.close();
+                    fw.close();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(Exam_2DV.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
-        } else if (t.getEnsambladas() >= 30) {
+        } else if (t.getEnsambladas()
+                >= 30) {
             if (s <= 93) {
                 try {
                     int tiempo = 0;
@@ -1456,7 +1573,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                     tiempo += c.getTeclado().getTiempo();
                     tiempo += c.getPantalla().getTiempo();
                     tiempo += c.getProcesador().getTiempo();
-                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
 
@@ -1470,14 +1587,45 @@ public class Exam_2DV extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
 
+            } else {
+                hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
+                Thread proceso1 = new Thread(he);
+                proceso1.start();
+                JOptionPane.showMessageDialog(null, "Fallo el ensamblaje ");
+                File archivo = null;
+                FileWriter fw = null;
+                BufferedWriter bw = null;
+                try {
+                    archivo = new File("./Bitacora.txt");
+                    fw = new FileWriter(archivo, true);
+                    bw = new BufferedWriter(fw);
+                    Date hora = new Date();
+                    String h;
+                    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+                    h = sdf.format(hora);
+                    String linea = h + " " + t.getNombre() + " Fallo en ensamblar la computadora" + c.getNoserie();
+                    bw.write(linea);
+                    bw.newLine();
+                    bw.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } // Fin Try Catch
+                try {
+                    bw.close();
+                    fw.close();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(Exam_2DV.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
         }
     }//GEN-LAST:event_jButton9MouseClicked
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1489,35 +1637,23 @@ public static void main(String args[]) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
 
-                
-
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Exam_2DV.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        
-
-} catch (InstantiationException ex) {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Exam_2DV.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        
-
-} catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Exam_2DV.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Exam_2DV.class
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

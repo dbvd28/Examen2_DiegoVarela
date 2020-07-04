@@ -60,7 +60,7 @@ public class Tecnicos {
 
     @Override
     public String toString() {
-        return "Tecnicos{" + "nombre=" + nombre + ", ensambladas=" + ensambladas + '}';
+        return   nombre + ", ensambladas=" + ensambladas + '}';
     }
    
 }

@@ -121,7 +121,7 @@ public class Computadora implements Serializable{
 
     @Override
     public String toString() {
-        return "Computadora{" + "noserie=" + noserie + ", Año=" + Año + ", material=" + material + ", ram=" + ram + '}';
+        return "Computadora{" + noserie + ", Año=" + Año + ", material=" + material + ", ram=" + ram + '}';
     }
 
 }
