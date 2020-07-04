@@ -84,4 +84,19 @@ public class admincomputadoras {
 
         }
     }
+    public void Eliminar(int nombre) {
+        try {
+            cargarArchivo();
+            int elim = 0;
+            for (int i = 0; i < listacomp.size(); i++) {
+                if (listacomp.get(i).getNoserie()==nombre) {
+                    elim = i;
+                }
+            }
+            listacomp.remove(elim);
+            escribirArchivo();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

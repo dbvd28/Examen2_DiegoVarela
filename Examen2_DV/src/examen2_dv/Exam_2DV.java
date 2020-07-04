@@ -12,12 +12,15 @@ import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import java.util.Random;
 
 /**
  *
  * @author diego
  */
 public class Exam_2DV extends javax.swing.JFrame {
+
+    static Random random = new Random();
 
     /**
      * Creates new form Exam_2DV
@@ -184,6 +187,15 @@ public class Exam_2DV extends javax.swing.JFrame {
         cb_eliminarcomp = new javax.swing.JComboBox<>();
         jLabel34 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        cb_ensamtec = new javax.swing.JComboBox<>();
+        cb_ensamcomp = new javax.swing.JComboBox<>();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jt_ensamble = new javax.swing.JTable();
+        pr_ensam = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -361,7 +373,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                                 .addComponent(jLabel27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(sp_tiempotec)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel17)
@@ -547,7 +559,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                             .addComponent(jLabel32)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(cb_genero, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -577,7 +589,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                             .addComponent(cb_genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(39, 39, 39)
                         .addComponent(jButton2)
-                        .addGap(0, 352, Short.MAX_VALUE)))
+                        .addGap(0, 382, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -625,7 +637,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                         .addComponent(jButton6)
                         .addGap(67, 67, 67)
                         .addComponent(jButton7)))
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(311, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -639,7 +651,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                     .addComponent(jButton5)
                     .addComponent(jButton7)
                     .addComponent(jButton6))
-                .addContainerGap(434, Short.MAX_VALUE))
+                .addContainerGap(464, Short.MAX_VALUE))
         );
 
         compu.addTab("Modifcar tecnico", jPanel3);
@@ -709,6 +721,11 @@ public class Exam_2DV extends javax.swing.JFrame {
         jLabel65.setText("Pantalla");
 
         jButton8.setText("Modifcar computadora");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -822,7 +839,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel60)
                                                     .addComponent(tf_actil, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                                 .addComponent(jLabel61)
                                                 .addGap(18, 18, 18)
@@ -845,7 +862,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cb_modcomp, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -970,7 +987,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(306, 306, 306)
                         .addComponent(jButton3)))
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(364, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -981,7 +998,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                 .addComponent(cb_eliminartecnicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addContainerGap(475, Short.MAX_VALUE))
+                .addContainerGap(505, Short.MAX_VALUE))
         );
 
         compu.addTab("Eliminar Tecnico", jPanel5);
@@ -1010,7 +1027,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(298, 298, 298)
                         .addComponent(jButton4)))
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(343, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1021,10 +1038,92 @@ public class Exam_2DV extends javax.swing.JFrame {
                 .addComponent(cb_eliminarcomp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jButton4)
-                .addContainerGap(437, Short.MAX_VALUE))
+                .addContainerGap(467, Short.MAX_VALUE))
         );
 
         compu.addTab("Eliminar computadora", jPanel6);
+
+        jLabel66.setText("Elija la computadora ensamblar:");
+
+        jLabel67.setText("Elija el tecnico que la ensamblara:");
+
+        jButton9.setText("Ensamblar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        jt_ensamble.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Parte", "Tiempo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jt_ensamble);
+
+        pr_ensam.setBackground(new java.awt.Color(255, 0, 0));
+        pr_ensam.setString("Ensamblando...");
+        pr_ensam.setStringPainted(true);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel67)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(pr_ensam, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(cb_ensamtec, 0, 123, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel66)
+                        .addGap(18, 18, 18)
+                        .addComponent(cb_ensamcomp, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127))))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(339, 339, 339)
+                        .addComponent(jButton9)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_ensamtec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_ensamcomp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel66)
+                    .addComponent(jLabel67))
+                .addGap(47, 47, 47)
+                .addComponent(jButton9)
+                .addGap(18, 18, 18)
+                .addComponent(pr_ensam, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(150, Short.MAX_VALUE))
+        );
+
+        compu.addTab("Ensamblaje", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1086,6 +1185,25 @@ public class Exam_2DV extends javax.swing.JFrame {
             ac.cargarArchivo();
             DefaultComboBoxModel model = new DefaultComboBoxModel(ac.getListacomp().toArray());
             cb_eliminarcomp.setModel(model);
+        } else if (compu.getSelectedIndex() == 6) {
+            admintecnicos at = new admintecnicos("./Tecnicos.txt");
+            at.cargarArchivo();
+            DefaultComboBoxModel model = new DefaultComboBoxModel(at.getTecnicos().toArray());
+            cb_ensamtec.setModel(model);
+            admincomputadoras ac = new admincomputadoras("./Computadoras.dbvd");
+            ac.cargarArchivo();
+            DefaultComboBoxModel model2 = new DefaultComboBoxModel(ac.getListacomp().toArray());
+            cb_ensamcomp.setModel(model2);
+        } else if (compu.getSelectedIndex() == 2) {
+            admintecnicos at = new admintecnicos("./Tecnicos.txt");
+            at.cargarArchivo();
+            DefaultComboBoxModel model = new DefaultComboBoxModel(at.getTecnicos().toArray());
+            cb_modtecnico.setModel(model);
+        } else if (compu.getSelectedIndex() == 3) {
+            admincomputadoras ac = new admincomputadoras("./Computadoras.dbvd");
+            ac.cargarArchivo();
+            DefaultComboBoxModel model2 = new DefaultComboBoxModel(ac.getListacomp().toArray());
+            cb_modcomp.setModel(model2);
         }
     }//GEN-LAST:event_compuStateChanged
 
@@ -1211,10 +1329,155 @@ public class Exam_2DV extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cb_modcompItemStateChanged
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        admincomputadoras ac = new admincomputadoras("./Computadoras.dbvd");
+        ac.cargarArchivo();
+        Computadora temp = (Computadora) cb_modcomp.getSelectedItem();
+        int cont = 0;
+        for (int i = 0; i < ac.getListacomp().size(); i++) {
+            if (ac.getListacomp().get(i).getNoserie() == temp.getNoserie()) {
+                cont = i;
+            }
+        }
+        ac.getListacomp().remove(cont);
+        String colorcomp, colortec, material, tactil, tipo, marcad, marcar, materialb, materialt;
+        int tiempor, tiempop, tiempopr, timepot, tiempod, tiempob, año, nucleos, noserie;
+        double velocidad;
+        noserie = Integer.parseInt(tf_noserie1.getText());
+        año = (int) sp_año1.getValue();
+        colorcomp = tf_color.getText();
+        material = tf_materialcomp1.getText();
+        RAM x = new RAM(tf_marcaram1.getText(), (int) sp_tamañoram1.getValue(), (int) sp_tiemporam1.getValue());
+        Disco d = new Disco(tf_marcadisco1.getText(), (int) sp_tamañod1.getValue(), (int) sp_tiempodis1.getValue());
+        Bateria b = new Bateria(tf_matbat1.getText(), (int) sp_horasbat1.getValue(), (int) sp_tiempobat1.getValue());
+        Teclado t = new Teclado(tf_mattec1.getText(), tf_colortec.getText(), (int) sp_tiempotec1.getValue());
+        Pantalla p = new Pantalla((String) cb_tactil.getSelectedItem(), tf_tipopantalla1.getText(), (int) sp_tiempopan1.getValue());
+        Procesador pr = new Procesador((int) sp_nucleos1.getValue(), Double.parseDouble(tf_velocidad1.getText()), (int) sp_tiempoproc1.getValue());
+        Computadora comp = new Computadora(noserie, año, colorcomp, material, x, d, b, t, p, pr);
+        ac.getListacomp().add(comp);
+        ac.escribirArchivo();
+
+        JOptionPane.showMessageDialog(null, "Se modifico con exito su computadora");
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        admintecnicos at = new admintecnicos("./Tecnicos.txt");
+        at.cargarArchivo();
+        int r = 1 + random.nextInt(100);
+        int p = 1 + random.nextInt(100);
+        int q = 1 + random.nextInt(100);
+        int s = 1 + random.nextInt(100);
+        Tecnicos t = (Tecnicos) cb_ensamtec.getSelectedItem();
+        Computadora c = (Computadora) cb_ensamcomp.getSelectedItem();
+        System.out.println(t.getEnsambladas());;
+        if (t.getEnsambladas() <= 5 && t.getEnsambladas() >= 1) {
+            if (r <= 70) {
+                try {
+                    int tiempo = 0;
+                    tiempo += c.getRam().getTiempo();
+                    tiempo += c.getDisk().getTiempo();
+                    tiempo += c.getBaterry().getTiempo();
+                    tiempo += c.getTeclado().getTiempo();
+                    tiempo += c.getPantalla().getTiempo();
+                    tiempo += c.getProcesador().getTiempo();
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    Thread proceso1 = new Thread(he);
+                    proceso1.start();
+
+                    for (Tecnicos tec : at.getTecnicos()) {
+                        if (tec.getNombre().equals(t.getNombre())) {
+                            tec.setEnsambladas(tec.getEnsambladas() + 1);
+                        }
+                    }
+                    at.escribirArchivo();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } else if (t.getEnsambladas() <= 15 && t.getEnsambladas() >= 6) {
+            if (p <= 78) {
+                try {
+                    int tiempo = 0;
+                    tiempo += c.getRam().getTiempo();
+                    tiempo += c.getDisk().getTiempo();
+                    tiempo += c.getBaterry().getTiempo();
+                    tiempo += c.getTeclado().getTiempo();
+                    tiempo += c.getPantalla().getTiempo();
+                    tiempo += c.getProcesador().getTiempo();
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    Thread proceso1 = new Thread(he);
+                    proceso1.start();
+
+                    for (Tecnicos tec : at.getTecnicos()) {
+                        if (tec.getNombre().equals(t.getNombre())) {
+                            tec.setEnsambladas(tec.getEnsambladas() + 1);
+                        }
+                    }
+                    at.escribirArchivo();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        } else if (t.getEnsambladas() <= 30 && t.getEnsambladas() >= 16) {
+            if (q <= 87) {
+                try {
+                    int tiempo = 0;
+                    tiempo += c.getRam().getTiempo();
+                    tiempo += c.getDisk().getTiempo();
+                    tiempo += c.getBaterry().getTiempo();
+                    tiempo += c.getTeclado().getTiempo();
+                    tiempo += c.getPantalla().getTiempo();
+                    tiempo += c.getProcesador().getTiempo();
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    Thread proceso1 = new Thread(he);
+                    proceso1.start();
+
+                    for (Tecnicos tec : at.getTecnicos()) {
+                        if (tec.getNombre().equals(t.getNombre())) {
+                            tec.setEnsambladas(tec.getEnsambladas() + 1);
+                        }
+                    }
+                    at.escribirArchivo();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        } else if (t.getEnsambladas() >= 30) {
+            if (s <= 93) {
+                try {
+                    int tiempo = 0;
+                    tiempo += c.getRam().getTiempo();
+                    tiempo += c.getDisk().getTiempo();
+                    tiempo += c.getBaterry().getTiempo();
+                    tiempo += c.getTeclado().getTiempo();
+                    tiempo += c.getPantalla().getTiempo();
+                    tiempo += c.getProcesador().getTiempo();
+                    hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, tiempo, jt_ensamble, c);
+                    Thread proceso1 = new Thread(he);
+                    proceso1.start();
+
+                    for (Tecnicos tec : at.getTecnicos()) {
+                        if (tec.getNombre().equals(t.getNombre())) {
+                            tec.setEnsambladas(tec.getEnsambladas() + 1);
+                        }
+                    }
+                    at.escribirArchivo();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }//GEN-LAST:event_jButton9MouseClicked
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1225,16 +1488,36 @@ public class Exam_2DV extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+                
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Exam_2DV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Exam_2DV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Exam_2DV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Exam_2DV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exam_2DV.class
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Exam_2DV.class
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Exam_2DV.class
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Exam_2DV.class
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -1251,6 +1534,8 @@ public class Exam_2DV extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_colortec;
     private javax.swing.JComboBox<String> cb_eliminarcomp;
     private javax.swing.JComboBox<String> cb_eliminartecnicos;
+    private javax.swing.JComboBox<String> cb_ensamcomp;
+    private javax.swing.JComboBox<String> cb_ensamtec;
     private javax.swing.JComboBox<String> cb_genero;
     private javax.swing.JComboBox<String> cb_modcomp;
     private javax.swing.JComboBox<String> cb_modtecnico;
@@ -1264,6 +1549,7 @@ public class Exam_2DV extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1326,6 +1612,8 @@ public class Exam_2DV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1335,10 +1623,14 @@ public class Exam_2DV extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JList<String> jl_computadoras;
     private javax.swing.JList<String> jl_tecnicos;
+    private javax.swing.JTable jt_ensamble;
+    private javax.swing.JProgressBar pr_ensam;
     private javax.swing.JSpinner sp_año;
     private javax.swing.JSpinner sp_año1;
     private javax.swing.JSpinner sp_edadtec;
