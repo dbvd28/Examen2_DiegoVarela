@@ -1397,12 +1397,6 @@ public class Exam_2DV extends javax.swing.JFrame {
             if (r <= 70) {
                 try {
                     int tiempo = 0;
-                    tiempo += c.getRam().getTiempo();
-                    tiempo += c.getDisk().getTiempo();
-                    tiempo += c.getBaterry().getTiempo();
-                    tiempo += c.getTeclado().getTiempo();
-                    tiempo += c.getPantalla().getTiempo();
-                    tiempo += c.getProcesador().getTiempo();
                     hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
@@ -1416,6 +1410,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                JOptionPane.showMessageDialog(null, "El ensamblaje se hizo con exito");
             } else {
                 hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                 Thread proceso1 = new Thread(he);
@@ -1453,12 +1448,7 @@ public class Exam_2DV extends javax.swing.JFrame {
             if (p <= 78) {
                 try {
                     int tiempo = 0;
-                    tiempo += c.getRam().getTiempo();
-                    tiempo += c.getDisk().getTiempo();
-                    tiempo += c.getBaterry().getTiempo();
-                    tiempo += c.getTeclado().getTiempo();
-                    tiempo += c.getPantalla().getTiempo();
-                    tiempo += c.getProcesador().getTiempo();
+
                     hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
@@ -1472,7 +1462,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+                JOptionPane.showMessageDialog(null, "El ensamblaje se hizo con exito");
             } else {
                 hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                 Thread proceso1 = new Thread(he);
@@ -1510,12 +1500,7 @@ public class Exam_2DV extends javax.swing.JFrame {
             if (q <= 87) {
                 try {
                     int tiempo = 0;
-                    tiempo += c.getRam().getTiempo();
-                    tiempo += c.getDisk().getTiempo();
-                    tiempo += c.getBaterry().getTiempo();
-                    tiempo += c.getTeclado().getTiempo();
-                    tiempo += c.getPantalla().getTiempo();
-                    tiempo += c.getProcesador().getTiempo();
+
                     hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
@@ -1529,7 +1514,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+                JOptionPane.showMessageDialog(null, "El ensamblaje se hizo con exito");
             } else {
                 hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                 Thread proceso1 = new Thread(he);
@@ -1567,12 +1552,7 @@ public class Exam_2DV extends javax.swing.JFrame {
             if (s <= 93) {
                 try {
                     int tiempo = 0;
-                    tiempo += c.getRam().getTiempo();
-                    tiempo += c.getDisk().getTiempo();
-                    tiempo += c.getBaterry().getTiempo();
-                    tiempo += c.getTeclado().getTiempo();
-                    tiempo += c.getPantalla().getTiempo();
-                    tiempo += c.getProcesador().getTiempo();
+
                     hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                     Thread proceso1 = new Thread(he);
                     proceso1.start();
@@ -1586,7 +1566,7 @@ public class Exam_2DV extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+                JOptionPane.showMessageDialog(null, "El ensamblaje se hizo con exito");
             } else {
                 hilo_ensamblaje he = new hilo_ensamblaje(pr_ensam, jt_ensamble, c);
                 Thread proceso1 = new Thread(he);
